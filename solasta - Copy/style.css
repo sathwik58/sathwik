@@ -1,0 +1,363 @@
+body{
+    background-color: #000;
+    color: #dfd2d2fc;
+    font-family: Josefin Sans,sans-serif;
+    margin: 0; 
+    background: url(b.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* overflow: hidden; */
+    text-align: center;
+    
+}
+#preloader{
+    background: black url(preloader.gif) no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+*{
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+}
+.website{
+    background-color:rgba(0, 0, 0, 0.211);
+
+}
+.homepage{
+    align-items: center;
+    display: flex;
+    flex-direction:column;
+}
+.navigation{
+    position: fixed;
+    top: 0;
+    transition: all .5s;
+    z-index: 10;
+    background-color: black;
+}
+.navi-left{
+    left: 0;
+    min-width: 80px;
+    padding-right: 20px;
+    position: fixed;
+    transition: all .5s;
+}
+.navi-left:hover{
+    background-color: rgba(0, 0, 0, .35);
+}
+.logo{
+    height:90px;
+    top: 3px;
+    position: absolute;
+    left: 0;
+    transition:all 0.5s ease;
+}
+.navi-left:hover .logo{
+    transform: scale(1.75);
+    top:30px;
+    left:35px;
+}
+.nav-items{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    bottom: 40px;
+}
+.navi-left:hover .nav-items{
+    visibility: visible;
+}
+.nav-item{
+    margin: 10px;
+}
+.nav-link{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+.navi-left:hover .nav-link{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-img{
+    height:27px;
+    margin-right: 25px;
+    padding-left: 10px;
+}
+.nav-link-name{
+    transform: translatex(-20px) rotatey(90deg);
+    transition: all .3s ease-in;
+    color: pink;
+}
+.navi-left:hover .nav-link-name{
+    transform: translatex(-5px);
+    text-align: left;
+}
+.navi-right-login{
+    min-width: 80px;
+    padding-left: 20px;
+    position: fixed;
+    right: 20px;
+    transition: all;
+}
+.profile{
+    align-items: center;
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.navi-right {
+    right: 0;
+    min-width: 80px;
+    padding-left: 20px;
+    position: fixed;
+    transition: all .5s;
+}
+
+.navi-right:hover {
+    background-color: rgba(0, 0, 0, .35);
+}
+.nav-ritems {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    bottom: 40px;
+}
+
+.navi-right:hover .nav-ritems {
+    visibility: visible;
+}
+
+.nav-ritem {
+    margin: 10px;
+}
+
+.nav-rlink {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+
+.navi-right:hover .nav-rlink {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-rimg {
+    height: 27px;
+    margin-left: 25px;
+    padding-right: 10px;
+}
+
+.nav-rlink-name {
+    transform: translatex(20px) rotatey(90deg);
+    transition: all .3s ease-in;
+    color: pink;
+}
+
+.navi-right:hover .nav-rlink-name {
+    transform: translatex(5px);
+    text-align: right;
+}
+
+.clock{
+    display: flex;
+    justify-content: center;
+    animation: blinkAnimation 1s infinite; 
+}
+@keyframes blinkAnimation {
+    0% { color: red; } 
+    25% { color: blue; } 
+    50% { color: green; } 
+    75% { color: orange; } 
+    100% { color: red; }    
+}
+.clock div{
+    flex-basis: 100px;
+}
+.clock div p{
+    font-size: 60px;
+    margin: -14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.about{
+    font-size: 50px
+}
+.register{
+    color: pink;
+    font-size:25px;
+    font-family:  Montserrat;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 399;
+}
+.profile .register:hover{
+    text-shadow:1px 1px 1px pink;
+    font-weight: 500;
+}
+
+.center-section{
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.center-top{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 30px;
+}
+.line{
+    height: 2px;
+    box-shadow: 0px 1px 0px rgb(19, 193, 241),1px 0 0 rgb(234, 5, 181) ;
+    border: 1.6px solid rgb(9, 0, 112) ;
+    width:27rem;
+
+}
+
+.presents{
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-shadow: 0 0 2px rgb(234, 5, 181), 2px 0 0 darkblue; ;
+    color:pink;
+}
+
+.iiitdm-box{
+    font-size: 3rem;
+    font-weight: bolder;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 10px;
+  }
+.college-logo{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    right: 230px;
+}
+
+
+
+.iiitdm {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    font-family: Montserrat;
+    position: relative;
+    left: 40px;
+}
+
+.temp-lang {
+    margin-top:30px;
+    font-size:7.5rem;
+    font-weight: bolder;
+    font-family: Montserrat, sans-serif;
+    text-shadow: 0 5px 0 rgb(0, 0, 0), 5px 0 0 darkblue, 0 0 5px rgb(245, 245, 0);
+    color:white;
+}
+.slogan-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    font-size: 2.3rem;
+    font-family: Merriw eather,sans-serif;
+}
+.slogan-line1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+.slogan-line2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+.in{
+    font-family: Merriweather,sans-serif;
+}
+.solasta{
+    display:flex;
+    flex-direction: column;
+    gap: 35px;
+    font-weight: bolder;
+}
+.about{
+    padding-top: 50px;
+}
+.about-page{
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: center;
+    display: flex;
+    font-size: 2rem;
+    border-width: 10px;
+    border-style: groove;
+    border-color: black;
+    margin: 50px;
+    padding: 20px;
+}
+.foot-part1{
+    background-color: #57688f;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.logo1 {
+    height:90px;
+    top: 3px;
+    right: 0;
+    transition:all 0.5s ease;
+    border-bottom: 5px;
+    border-color: black;
+}
+.foot-part2{
+    justify-content: center;
+    justify-content: space-evenly;
+    display: flex;
+    height: 300px;
+    background-color: #4a5369;
+}
+ul {
+    margin-top: 20px;
+}
+ul a {
+    display: block;
+    margin-top: 10px;
+}
+ul .logo2{
+    font-size: 50px;
+}
+.foot-part3{
+    background-color: #353b40;
+}
