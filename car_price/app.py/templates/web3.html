@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='css/web3.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Car Price Predictor</h1>
+    </div>
+    <form method="post" accept-charset="utf-8" name="Modelform">
+        <div class="sub_div">
+            <h3 class="sub">Select The Companies:</h3>
+            <select class="custom-select" name="companies" id="companies" required="1">
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="sub_div">
+            <h3 class="sub">Select The Model Of The Car:</h3>
+            <select class="custom-select" name="model" id="model" required="1">
+                {% for models in model %}
+                <option value="{{ models }}">{{ models }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="sub_div">
+            <h3 class="sub">Select The Year of Purchase:</h3>
+            <select class="custom-select" name="year" id="year" required="1">
+                {% for years in year %}
+                <option value="{{ years }}">{{ years }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="sub_div">
+            <h3 class="sub">Select The Fule Type:</h3>
+            <select class="custom-select" name="fule" id="fule" required="1">
+                {% for fuels in fule %}
+                <option value="{{ fuels }}">{{ fuels }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="sub_div">
+            <h3 class="sub">Enter the Number of Kilometres that the car has travelled:</h3>
+            <input type="text" class="custom-select" id="kilo_driven" name="kilo_driven" placeholder="Enter the kilometres driven ">
+        </div>
+        <div class="button">
+            <button  class="btn btn-primary form-control" onclick="send_data()">Predict Price</button>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-12" style="text-align: center">
+            <h4><span id="prediction"></span></h4>
+        </div>
+    </div>
+    <script>
+        function form_handler(event) {
+            event.preventDefault(); // Don't submit the form normally
+        }
+        function send_data()
+        {
+            document.querySelector('form').addEventListener("submit",form_handler);
+    
+            var fd=new FormData(document.querySelector('form'));
+    
+            var xhr= new XMLHttpRequest({mozSystem: true});
+    
+            xhr.open('POST','/predict',true);
+            document.getElementById('prediction').innerHTML="Wait! Predicting Price.....";
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == XMLHttpRequest.DONE){
+                    document.getElementById('prediction').innerHTML="Prediction: ₹"+xhr.responseText;
+    
+                }
+            };
+    
+            xhr.onload= function(){};
+    
+            xhr.send(fd);
+        }
+    </script>
+
+</body>
+</html>

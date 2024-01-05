@@ -1,0 +1,41 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+.sub {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.sub_div {
+    height: 125px;
+}
+.car {
+   width :auto;
+}
+.custom-select {
+    width: 100%; 
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.custom-text {
+    display: flex;
+    justify-content: center;
+}
+#kilo_driven {
+    font-size: 30px;
+    text-align: center;
+}
+.button {
+    text-align: center;
+    height: 100px;
+}
